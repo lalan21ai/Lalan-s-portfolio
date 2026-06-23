@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Lalan Arockiyaraj R - Web Developer & Aspiring AI Engineer. Showcase of projects in NLP, sentiment analysis, AI chatbots, and full-stack development.">
+    <meta name="keywords" content="Lalan Arockiyaraj, AI Engineer, Web Developer, Portfolio, Python, PyTorch, Sentiment Analysis, Chatbot, Trichy">
+    <meta name="author" content="Lalan Arockiyaraj R">
+    <title>Lalan Arockiyaraj R | Aspiring AI Engineer & Developer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Neural Network Particle Effect -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-accent">&lt;</span>LALAN<span class="logo-accent">.AI /&gt;</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#home" class="nav-item active">Home</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#skills" class="nav-item">Skills</a>
+            <a href="#projects" class="nav-item">Projects</a>
+            <a href="#certifications" class="nav-item">Certificates</a>
+            <a href="resume.html" target="_blank" class="nav-item"><i class="fa-solid fa-file-pdf"></i> Resume</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="badge fade-in">Aspiring AI Engineer</div>
+                <h1 class="hero-title fade-in">
+                    Hi, I'm <span class="highlight">Lalan Arockiyaraj R</span>
+                </h1>
+                <h2 class="hero-subtitle fade-in">
+                    I build <span id="typewriter"></span><span class="cursor">|</span>
+                </h2>
+                <p class="hero-description fade-in">
+                    A passionate web developer transitioning into Artificial Intelligence. I combine modern full-stack capabilities with PyTorch and NLP models to build intelligent systems.
+                </p>
+                <div class="hero-cta fade-in">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fa-solid fa-code"></i> View Projects
+                    </a>
+                    <a href="resume.html" target="_blank" class="btn btn-secondary btn-resume">
+                        <i class="fa-solid fa-download"></i> Resume
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fa-solid fa-envelope"></i> Let's Talk
+                    </a>
+                </div>
+                <div class="hero-socials fade-in">
+                    <a href="https://www.linkedin.com/in/lalan-r-in-tech" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:lalanofficial.cw@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="tel:8300176599" aria-label="Phone">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="visual-glow"></div>
+                <div class="visual-image-wrapper">
+                    <img src="assets/hero_ai_visual.png" alt="Futuristic AI Visualization" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section section">
+            <div class="section-container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text scroll-reveal">
+                        <p class="lead">
+                            I am a Computer Science & Engineering graduate passionate about bridging the gap between web applications and advanced AI systems.
+                        </p>
+                        <p>
+                            With a strong foundation in designing, developing, and maintaining scalable applications, I adapt quickly to new technologies and thrive in problem-solving. My curiosity has led me to explore Deep Learning, Natural Language Processing (NLP), and transformer models, paving my path to becoming a dedicated **AI Engineer**.
+                        </p>
+                        <div class="education-info">
+                            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                            <div class="edu-item">
+                                <div class="edu-header">
+                                    <h4>Bachelor of Computer Science & Engineering (BE CSE)</h4>
+                                    <span class="edu-date">2022 - 2026</span>
+                                </div>
+                                <p class="edu-inst">Jayaram College of Engineering and Technology, Karattampatti</p>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-header">
+                                    <h4>Higher Secondary Certificate (HSC)</h4>
+                                    <span class="edu-date">2021 - 2022</span>
+                                </div>
+                                <p class="edu-inst">Government Higher Secondary School, Valadi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats scroll-reveal">
+                        <div class="stat-card">
+                            <div class="stat-num">90%+</div>
+                            <div class="stat-desc">Model Accuracy in Sentiment Analysis</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">4+</div>
+                            <div class="stat-desc">Professional Certifications</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">2+</div>
+                            <div class="stat-desc">Core AI Projects Developed</div>
+                        </div>
+                        <div class="about-action" style="gap: 15px;">
+                            <a href="resume.html" target="_blank" class="btn btn-primary btn-resume">
+                                <i class="fa-solid fa-download"></i> Download Resume
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section">
+            <div class="section-container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">A blend of full-stack engineering and machine learning techniques.</p>
+                
+                <div class="skills-grid">
+                    <!-- AI & Machine Learning -->
+                    <div class="skills-category scroll-reveal">
+                        <div class="category-header">
+                            <i class="fa-solid fa-brain"></i>
+                            <h3>AI & Machine Learning</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-tag" data-related="sentiment-analysis"><i class="fa-brands fa-python"></i> Python <span class="skill-level advanced">Advanced</span></div>
+                            <div class="skill-tag" data-related="smart-medicine"><i class="fa-solid fa-cubes"></i> PyTorch <span class="skill-level intermediate">Intermediate</span></div>
+                            <div class="skill-tag" data-related="smart-medicine"><i class="fa-solid fa-language"></i> NLP <span class="skill-level advanced">Advanced</span></div>
+                            <div class="skill-tag" data-related="sentiment-analysis"><i class="fa-solid fa-network-wired"></i> Transformers (mBERT) <span class="skill-level intermediate">Intermediate</span></div>
+                            <div class="skill-tag" data-related="sentiment-analysis"><i class="fa-solid fa-chart-line"></i> Matplotlib & Seaborn <span class="skill-level intermediate">Intermediate</span></div>
+                            <div class="skill-tag" data-related="sentiment-analysis"><i class="fa-solid fa-square-poll-vertical"></i> VADER Sentiment <span class="skill-level advanced">Advanced</span></div>
+                        </div>
+                    </div>
+ 
+                    <!-- Web & Backend Development -->
+                    <div class="skills-category scroll-reveal">
+                        <div class="category-header">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <h3>Web & Full Stack</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-tag" data-related="smart-medicine"><i class="fa-solid fa-pepper-hot"></i> Flask <span class="skill-level intermediate">Intermediate</span></div>
+                            <div class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5 <span class="skill-level advanced">Advanced</span></div>
+                            <div class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3 <span class="skill-level advanced">Advanced</span></div>
+                            <div class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript <span class="skill-level intermediate">Intermediate</span></div>
+                            <div class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub <span class="skill-level intermediate">Intermediate</span></div>
+                            <div class="skill-tag" data-related="sentiment-analysis"><i class="fa-brands fa-aws"></i> AWS Cloud <span class="skill-level intermediate">Intermediate</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section">
+            <div class="section-container">
+                <h2 class="section-title">Key Projects</h2>
+                <p class="section-subtitle">Real-world projects showcasing both machine learning and full-stack integration.</p>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article id="sentiment-analysis" class="project-card scroll-reveal">
+                        <div class="project-image-container">
+                            <img src="assets/sentiment_project.png" alt="Multilingual Sentiment Analysis" class="project-image">
+                            <div class="project-tags">
+                                <span class="tag">mBERT</span>
+                                <span class="tag">VADER</span>
+                                <span class="tag">AWS</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-date">Oct 2024 - Dec 2024</div>
+                            <h3 class="project-title">Multilingual Sentiment Analysis for Amazon Reviews</h3>
+                            <p class="project-text">
+                                Developed a hybrid multilingual sentiment analysis model classifying reviews as positive, negative, or neutral. Combined **mBERT (Multilingual BERT)** and **VADER** for optimized sentiment scoring, achieving **over 90% accuracy** in testing.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Implemented tokenization, stopword removal, and advanced preprocessing.</li>
+                                <li>Created interactive data visualizations with Matplotlib & Seaborn.</li>
+                                <li>Deployed the model on AWS Cloud for scalable real-time inference.</li>
+                            </ul>
+                            <div class="project-links">
+                                <span class="btn btn-sm btn-disabled"><i class="fa-solid fa-lock"></i> Client IP</span>
+                                <span class="project-badge"><i class="fa-solid fa-bolt"></i> 90% Acc</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article id="smart-medicine" class="project-card scroll-reveal">
+                        <div class="project-image-container">
+                            <img src="assets/chatbot_project.png" alt="Smart Medicine AI Chatbot" class="project-image">
+                            <div class="project-tags">
+                                <span class="tag">PyTorch</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Flask</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-date">Jan 2025 - Jun 2025</div>
+                            <h3 class="project-title">Smart Medicine: AI Chatbot for Treatment Support</h3>
+                            <p class="project-text">
+                                Built an AI-powered conversational agent assisting users by analyzing symptoms and offering personalized treatment recommendations, ensuring responsive support.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Applied Deep Learning & NLP models using **PyTorch** for intent recognition.</li>
+                                <li>Integrated with a lightweight web interface built in **Flask**.</li>
+                                <li>Optimized model performance via user feedback loops and iterative training.</li>
+                            </ul>
+                            <div class="project-links">
+                                <span class="btn btn-sm btn-disabled"><i class="fa-solid fa-lock"></i> Private Repo</span>
+                                <span class="project-badge"><i class="fa-solid fa-shield-halved"></i> Privacy-first</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications-section section">
+            <div class="section-container">
+                <h2 class="section-title">Certifications & Achievements</h2>
+                <div class="certifications-grid">
+                    <div class="certifications-visual scroll-reveal">
+                        <div class="visual-glow"></div>
+                        <div class="cert-image-wrapper">
+                            <img src="assets/certificate_visual.png" alt="Certifications & Badges" class="cert-image">
+                        </div>
+                    </div>
+                    <div class="timeline scroll-reveal">
+                        <!-- Certificate 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Experience Based Project Learning</h3>
+                                <p class="issuer">Naan Mudhalvan</p>
+                                <p class="timeline-details">Practical project-based curriculum focusing on modern software delivery and agile methodologies.</p>
+                            </div>
+                        </div>
+                        <!-- Certificate 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Robotic Process Automation</h3>
+                                <p class="issuer">Naan Mudhalvan</p>
+                                <p class="timeline-details">Understanding UI automation, bot creation, orchestration, and business process automation flows.</p>
+                            </div>
+                        </div>
+                        <!-- Certificate 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Salesforce Developer Certificate</h3>
+                                <p class="issuer">Naan Mudhalvan</p>
+                                <p class="timeline-details">Covers Apex programming, Visualforce, Lightning Web Components (LWC), and platform fundamentals.</p>
+                            </div>
+                        </div>
+                        <!-- Certificate 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Full Stack Web Developer</h3>
+                                <p class="issuer">Don Bosco Tech (39 Days Intensive)</p>
+                                <p class="timeline-details">Rigorous bootcamp covering foundational HTML, CSS, JavaScript, database design, and backend engineering.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section">
+            <div class="section-container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss how I can add value to your AI or engineering team.</p>
+
+                <div class="contact-grid">
+                    <div class="contact-info scroll-reveal">
+                        <h3>Contact Information</h3>
+                        <p class="contact-desc">
+                            Feel free to reach out directly. I am open to internships, junior AI developer roles, and collaborations.
+                        </p>
+                        <div class="info-list">
+                            <a href="mailto:lalanofficial.cw@gmail.com" class="info-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <span>lalanofficial.cw@gmail.com</span>
+                                </div>
+                            </a>
+                            <a href="tel:8300176599" class="info-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <span>+91 8300176599</span>
+                                </div>
+                            </a>
+                            <div class="info-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <h4>Location</h4>
+                                    <span>Trichy, Tamil Nadu, India</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fa-solid fa-globe"></i>
+                                <div>
+                                    <h4>Languages</h4>
+                                    <span>Tamil (Native), English (Fluent)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container scroll-reveal">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="5" required placeholder="Let's build something intelligent..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Send Message <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <div id="form-status" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Lalan Arockiyaraj R. All rights reserved.</p>
+            <p>Designed with warm vibes & neural logic.</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/lalan-r-in-tech" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:lalanofficial.cw@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
