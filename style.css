@@ -352,6 +352,8 @@ li {
     background: transparent;
     border: none;
     cursor: pointer;
+    position: relative;
+    z-index: 101;
 }
 
 .mobile-nav-toggle .bar {
@@ -1391,7 +1393,7 @@ li {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: min(90vw, 320px);
         height: 100vh;
         padding: 80px 24px;
@@ -1402,12 +1404,13 @@ li {
         justify-content: flex-start;
         align-items: stretch;
         gap: 22px;
-        transition: right 0.4s ease;
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
         border-left: 1px solid rgba(255, 255, 255, 0.05);
     }
     
     .nav-links.active {
-        right: 0;
+        transform: translateX(0);
     }
     
     .nav-item {
@@ -1636,5 +1639,312 @@ li {
     }
     .certifications-visual {
         order: -1; /* Display image above timeline on tablets/mobile */
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE POLISH
+   ========================================================================== */
+img,
+canvas {
+    max-width: 100%;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.section-container,
+.hero-section,
+.footer-container {
+    width: 100%;
+}
+
+.hero-title,
+.section-title,
+.project-title,
+.timeline-content h3,
+.contact-info h3,
+.category-header h3,
+.edu-header h4 {
+    overflow-wrap: anywhere;
+}
+
+.projects-grid,
+.skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+.project-links,
+.about-action {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.info-item,
+.skill-tag,
+.btn {
+    min-width: 0;
+}
+
+.info-item > div {
+    min-width: 0;
+}
+
+.info-item > div,
+.skill-tag span,
+.btn {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+    html {
+        scroll-padding-top: 86px;
+    }
+
+    .header,
+    .header.scrolled {
+        padding: 14px 20px;
+    }
+
+    .hero-section {
+        min-height: auto;
+        padding: 118px 20px 56px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.35rem, 8vw, 3.4rem);
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        min-height: 2.2em;
+        text-align: center;
+    }
+
+    .about-action {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    * {
+        max-width: 100%;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    #neural-canvas {
+        opacity: 0.35;
+    }
+
+    .logo {
+        font-size: 1.12rem;
+        letter-spacing: 0;
+        max-width: calc(100vw - 82px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav-links {
+        width: min(86vw, 300px);
+        height: 100dvh;
+        padding: 76px 20px 28px;
+        gap: 12px;
+        overflow-y: auto;
+    }
+
+    .nav-item {
+        padding: 13px 0;
+    }
+
+    .section {
+        padding: 64px 16px;
+    }
+
+    .section-title {
+        font-size: clamp(1.75rem, 9vw, 2.15rem);
+    }
+
+    .section-subtitle {
+        font-size: 0.98rem;
+        margin-bottom: 34px;
+    }
+
+    .hero-section {
+        width: 100%;
+        padding: 102px 16px 48px;
+        gap: 34px;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 100%;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 12vw, 2.55rem);
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.1rem, 6vw, 1.35rem);
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-description,
+    .about-text p,
+    .contact-desc {
+        font-size: 0.98rem;
+    }
+
+    .hero-cta,
+    .about-action {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-cta .btn,
+    .about-action .btn {
+        width: 100%;
+        justify-content: center;
+        padding-inline: 18px;
+    }
+
+    .hero-socials a {
+        width: 42px;
+        height: 42px;
+    }
+
+    .visual-image-wrapper,
+    .cert-image-wrapper {
+        width: calc(100vw - 32px);
+        max-width: 320px;
+    }
+
+    .visual-glow {
+        width: 230px;
+        height: 230px;
+    }
+
+    .skills-category,
+    .project-card,
+    .project-content,
+    .timeline-content,
+    .contact-form-container,
+    .stat-card {
+        width: 100%;
+        padding: 22px;
+    }
+
+    .project-card {
+        padding: 0;
+    }
+
+    .category-header {
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .skill-tag {
+        width: 100%;
+        justify-content: space-between;
+        border-radius: var(--border-radius-sm);
+    }
+
+    .project-image-container {
+        height: clamp(160px, 48vw, 210px);
+    }
+
+    .project-tags {
+        left: 14px;
+        right: 14px;
+        bottom: 12px;
+        flex-wrap: wrap;
+    }
+
+    .project-links {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .timeline {
+        margin-top: 34px;
+        padding: 0;
+    }
+
+    .timeline::after {
+        left: 8px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+        width: 100%;
+        padding: 8px 0 18px 28px;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 0;
+    }
+
+    .info-item {
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .info-item i {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .header,
+    .header.scrolled {
+        padding-inline: 14px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .hero-cta .btn,
+    .about-action .btn,
+    .contact-form .btn {
+        font-size: 0.92rem;
+    }
+
+    .skills-category,
+    .project-content,
+    .timeline-content,
+    .contact-form-container,
+    .stat-card {
+        padding: 18px;
     }
 }
