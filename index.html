@@ -23,9 +23,9 @@
     <!-- Header / Navigation -->
     <header class="header">
         <div class="logo">
-            <span class="logo-accent">&lt;</span>LALAN<span class="logo-accent">.AI /&gt;</span>
+            <span class="logo-accent">&lt;</span>LALAN<span class="logo-accent">.AI /&lt;</span>
         </div>
-        <nav class="nav-links">
+        <nav id="main-nav" class="nav-links" role="navigation" aria-label="Main Navigation">
             <a href="#home" class="nav-item active">Home</a>
             <a href="#about" class="nav-item">About</a>
             <a href="#skills" class="nav-item">Skills</a>
@@ -34,7 +34,7 @@
             <a href="resume.html" target="_blank" class="nav-item"><i class="fa-solid fa-file-pdf"></i> Resume</a>
             <a href="#contact" class="nav-item">Contact</a>
         </nav>
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation" aria-controls="main-nav" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>

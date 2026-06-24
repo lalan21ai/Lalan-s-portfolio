@@ -51,6 +51,10 @@ body {
     position: relative;
 }
 
+html {
+    scroll-padding-top: 120px;
+}
+
 /* Mouse cursor volumetric spotlight glow */
 body::before {
     content: '';
@@ -361,11 +365,13 @@ li {
    HERO SECTION
    ========================================================================== */
 .hero-section {
+    width: min(1200px, 100%);
+    margin: 0 auto;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 120px 8% 60px;
+    padding: 140px 24px 60px;
     gap: 50px;
     position: relative;
 }
@@ -375,6 +381,9 @@ li {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 620px;
+    justify-content: center;
+    text-align: left;
 }
 
 .badge {
@@ -396,6 +405,7 @@ li {
     font-size: 4rem;
     font-weight: 800;
     line-height: 1.1;
+    text-align: left;
 }
 
 .highlight {
@@ -424,14 +434,17 @@ li {
 
 .hero-cta {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-top: 10px;
+    align-items: center;
 }
 
 .hero-socials {
     display: flex;
     gap: 20px;
     margin-top: 15px;
+    justify-content: flex-start;
 }
 
 .hero-socials a {
@@ -544,7 +557,7 @@ li {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 60px;
-    align-items: start;
+    align-items: center;
 }
 
 .about-text {
@@ -1278,21 +1291,38 @@ li {
 /* ==========================================================================
    MEDIA QUERIES (Responsive Design)
    ========================================================================== */
+@media (max-width: 1200px) {
+    .hero-section {
+        padding: 140px 18px 60px;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 5vw, 3.8rem);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+    }
+}
+
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;
         text-align: center;
-        padding-top: 140px;
-        gap: 60px;
+        padding-top: 130px;
+        gap: 55px;
     }
     
     .hero-content {
         align-items: center;
         flex: auto;
+        max-width: 780px;
     }
     
     .hero-description {
         margin: 0 auto;
+        max-width: 100%;
     }
     
     .badge {
@@ -1302,11 +1332,25 @@ li {
     .hero-visual {
         flex: auto;
         width: 100%;
+        max-width: 560px;
     }
     
-    .about-grid {
+    .hero-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .hero-cta,
+    .hero-socials {
+        justify-content: center;
+    }
+    
+    .about-grid,
+    .skills-grid,
+    .projects-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
     }
     
     .timeline::after {
@@ -1334,7 +1378,10 @@ li {
 
 @media (max-width: 768px) {
     .header {
-        padding: 15px 25px;
+        width: 100%;
+        left: 0;
+        transform: none;
+        padding: 15px 18px;
     }
     
     .mobile-nav-toggle {
@@ -1345,21 +1392,28 @@ li {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: min(90vw, 320px);
         height: 100vh;
+        padding: 80px 24px;
         background: rgba(18, 14, 12, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 22px;
         transition: right 0.4s ease;
         border-left: 1px solid rgba(255, 255, 255, 0.05);
     }
     
     .nav-links.active {
         right: 0;
+    }
+    
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 16px 0;
     }
     
     .mobile-nav-toggle.active .bar:nth-child(1) {
@@ -1375,20 +1429,42 @@ li {
     }
     
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
+        line-height: 1.05;
     }
     
     .hero-subtitle {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     
-    .projects-grid, .contact-grid {
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-visual {
+        width: 100%;
+        max-width: 360px;
+    }
+    
+    .project-image-container {
+        height: 180px;
+    }
+    
+    .projects-grid,
+    .contact-grid,
+    .skills-grid,
+    .about-grid,
+    .certifications-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
     
     .contact-form-container {
-        padding: 25px;
+        padding: 24px;
+    }
+    
+    .section {
+        padding: 80px 18px;
     }
     
     .section-title {
