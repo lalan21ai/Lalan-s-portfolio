@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // 6. CONTACT FORM ACTION (Mail Client Integration)
+    // 6. CONTACT FORM ACTION (Direct Email Service Integration)
     // ==========================================================================
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
@@ -291,44 +291,56 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnHtml = submitBtn.innerHTML;
             
-            // Get form values
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            // UI Feedback during submission
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Drafting Email... <i class="fa-solid fa-circle-notch fa-spin"></i>';
+            submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-circle-notch fa-spin"></i>';
             
-            // Open mail draft via mailto link
-            const subject = encodeURIComponent(`Portfolio Contact: ${name}`);
-            const body = encodeURIComponent(`Hello Lalan,\n\nYou received a message from your portfolio website.\n\nSender Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}`);
-            const mailtoUrl = `mailto:lalanofficial.cw@gmail.com?subject=${subject}&body=${body}`;
-            
-            // Simulate brief delay for feedback, then open mailto
-            setTimeout(() => {
-                window.location.href = mailtoUrl;
-                
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('message', message);
+            formData.append('_subject', `Portfolio Contact: ${name}`);
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+
+            fetch('https://formsubmit.co/ajax/lalanofficial.cw@gmail.com', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json'
+                },
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Message could not be sent.');
+                }
+                return response.json();
+            })
+            .then(() => {
+                formStatus.textContent = "Message sent successfully. Thank you!";
+                formStatus.classList.add('success');
+                contactForm.reset();
+            })
+            .catch(() => {
+                formStatus.textContent = "Message failed. Please try again or email me directly.";
+                formStatus.classList.add('error');
+            })
+            .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnHtml;
-                
-                // Set success message
-                formStatus.textContent = "Opening your email client to send message! Thank you.";
-                formStatus.classList.add('success');
-                
-                // Clear fields
-                contactForm.reset();
-                
-                // Fade out message after 5 seconds
+
                 setTimeout(() => {
                     formStatus.style.opacity = '0';
                     setTimeout(() => {
                         formStatus.textContent = "";
                         formStatus.style.opacity = '1';
-                        formStatus.classList.remove('success');
+                        formStatus.className = "form-status";
                     }, 500);
                 }, 5000);
-            }, 1000);
+            });
         });
     }
 
